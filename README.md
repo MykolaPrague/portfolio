@@ -1,4 +1,4 @@
-# port_mysh
+# Portfolio
 🧑‍💻 Mykola Shyshka – Portfolio
 
 A lightweight, responsive personal portfolio website built with
