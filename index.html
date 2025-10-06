@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio – Mykola Shyshka</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="stylesheet" href="static/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet"/>
+
+    <!-- ВАЖЛИВО: відносні шляхи -->
+    <link rel="icon" href="static/favicon.ico"/>
+    <link rel="apple-touch-icon" href="static/icon-180.png"/>
+    <link rel="manifest" href="static/site.webmanifest"/>
+  </head>
+  <body>
+    <header class="container sticky-bar">
+      <div class="desktop">
+        <nav aria-label="Primary">
+          <ul class="nav-left">
+            <li><a href="#present" data-nav>Profile</a></li>
+            <li><a href="#projects" data-nav>My projects</a></li>
+            <li><a href="#contact" data-nav>Contacts</a></li>
+          </ul>
+          <ul class="nav-right">
+            <li>
+              <button id="themeToggle" class="contrast outline" type="button" aria-label="Toggle theme">🌙/☀️</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="mobile">
+        <nav aria-label="Primary">
+          <ul>
+            <li>
+              <details class="dropdown">
+                <summary>Menu</summary>
+                <ul>
+                  <li><a href="#present" data-nav>Profile</a></li>
+                  <li><a href="#projects" data-nav>My projects</a></li>
+                  <li><a href="#contact" data-nav>Contacts</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <button id="themeToggleMobile" class="contrast outline" type="button" aria-label="Toggle theme">🌙/☀️</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <!-- HERO / PRESENT -->
+      <section id="present" class="panel hero fullvh" aria-labelledby="present-title">
+        <div class="hero-inner">
+          <h1 id="present-title" class="hello">Mykola Shyshka</h1>
+
+          <img class="avatar" src="static/avatar2.png" alt="Mykola avatar" />
+
+          <h3>Hi, my name is Mykola Shyshka</h3>
+
+          <p class="myinfo">
+            I’m a Prague-based Computer Science graduate 🎓 building lean web apps and prototypes:
+            Python on the backend 👨‍💻 (Flask/Django), HTML/CSS/JS on the frontend, and a growing
+            toolkit of automation and data utilities 🤖📊. I care about readable code, small iterations,
+            and design that stays out of the way ✨. Lately I’ve been exploring applied AI—classification,
+            embeddings, and tiny agents that reduce repetitive work—and sharing lightweight write-ups
+            so others can build on top of my findings.
+          </p>
+
+          <p>
+            Beyond tech, I’m into fishing, long walks with podcasts 🎧, and the occasional street
+            photography 📷. I’m happiest when a simple script unlocks real-world value for someone.
+          </p>
+
+          <p>
+            <strong>Thanks for stopping by.</strong>
+            Let’s build something useful together. ⚡🌟
+          </p>
+
+          <div class="cta">
+            <a href="#projects" role="button">View projects</a>
+            <a href="#contact" class="secondary" role="button">Contact</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="panel fullvh" aria-labelledby="projects-title">
+        <h2 id="projects-title">My projects</h2>
+
+        <p class="tagline">
+          Python / Flask / Django · CRM mini-projects · Simple and practical web tools · AI-curious
+        </p>
+
+        <ul>
+          <li>
+            <a href="https://lamik.pythonanywhere.com" target="_blank" rel="noopener">
+              <img class="fish" src="static/fishman.png" alt="Fishlog preview"/>
+            </a>
+          </li>
+          <li>
+            <a href="https://lamik.pythonanywhere.com" target="_blank" rel="noopener noreferrer">
+              Fishlog (Django) – demo
+            </a>
+          </li>
+          <li>CRM Mini (Flask) – demo/description</li>
+          <li>
+            <a href="https://mykolaprague.github.io/curlytom.github.io/index.html" target="_blank" rel="noopener noreferrer">
+              Simple Web
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="panel fullvh" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contacts</h2>
+
+        <p>For collaborations, freelance work, or just to say hi—reach out anytime.</p>
+
+        <div class="contact-buttons">
+          <ul>
+            <li><a class="contrast outline" href="https://t.me/yourhandle" target="_blank" rel="noopener">💬 Telegram</a></li>
+            <li><a class="contrast outline" href="https://github.com/yourhandle" target="_blank" rel="noopener">🧑‍💻 GitHub</a></li>
+            <li><a class="contrast outline" href="https://www.upwork.com/freelancers/~01d4779350a70aa648" target="_blank" rel="noopener">🧰 Upwork</a></li>
+          </ul>
+        </div>
+
+        <!-- Форма без бекенду: заміни action на Formspree/EmailJS або залиш mailto -->
+        <!-- ВАРІАНТ 1: Formspree -->
+        <!-- <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> -->
+        <!-- ВАРІАНТ 2: простий mailto (відкриє поштовий клієнт користувача): -->
+        <form action="mailto:you@example.com" method="POST" enctype="text/plain">
+          <label>Name <input type="text" name="name" required /></label>
+          <label>Email <input type="email" name="email" required /></label>
+          <label>Message <textarea name="message" rows="5" required></textarea></label>
+          <label class="hp" aria-hidden="true" tabindex="-1">Your website (leave empty) <input type="text" name="website" autocomplete="off"/></label>
+          <button type="submit" class="contrast">Send</button>
+        </form>
+
+        <p class="contact-meta">📍 Prague, Czechia · ⏱️ Mon–Fri, 09:00–17:00 CET</p>
+      </section>
+    </main>
+
+    <!-- JS -->
+    <script>
+      // Theme toggle (no dependencies)
+      (function () {
+        const root = document.documentElement;
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+
+        function toggleTheme() {
+          const cur = root.getAttribute("data-theme") || "light";
+          const next = cur === "light" ? "dark" : "light";
+          root.setAttribute("data-theme", next);
+          localStorage.setItem("theme", next);
+        }
+
+        document.getElementById("themeToggle")?.addEventListener("click", toggleTheme);
+        document.getElementById("themeToggleMobile")?.addEventListener("click", toggleTheme);
+      })();
+
+      // Active link on scroll (optional)
+      (function () {
+        const links = document.querySelectorAll("a[data-nav]");
+        const map = new Map([...links].map(a => [a.getAttribute("href").slice(1), a]));
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              links.forEach(a => a.classList.remove("is-active"));
+              const a = map.get(e.target.id);
+              if (a) a.classList.add("is-active");
+              history.replaceState(null, "", location.pathname + location.search + "#" + e.target.id);
+            }
+          });
+        }, { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 1] });
+        document.querySelectorAll("section[id]").forEach(s => io.observe(s));
+      })();
+    </script>
+  </body>
+</html>

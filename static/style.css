@@ -1,0 +1,395 @@
+/* === Custom styles for Mykola Shyshka Portfolio ===
+   Works on GitHub Pages. All assets relative to /static/
+   ==================================================== */
+
+/* Base */
+html.no-smooth { scroll-behavior: auto !important; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --maxw: 1100px;
+  --radius: 16px;
+}
+
+/* базово (темнуватий оверлей) */
+body {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
+    /* затемнення */
+    url("background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* при лагу на мобілці – прибери */
+  background-position: center;
+}
+
+p {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+
+.hello {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+}
+
+/* світла тема */
+[data-theme="light"] body {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .25), rgba(255, 255, 255, .25)),
+    /* підсвітлення */
+    url("background.png");
+}
+
+/* темна тема */
+[data-theme="dark"] body {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)),
+    /* сильніше затемнення */
+    url("background.png");
+}
+
+.container {
+  max-width: var(--maxw);
+}
+
+#main {
+  padding-top: 0.1rem;
+}
+
+
+/* Sticky top nav with 2 ULs left/right */
+/* За замовчуванням — показуємо десктопну версію */
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+
+nav {
+  height: 2.5rem;
+}
+
+.sticky-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: none;
+  /* blur(8px); */
+  background: var(--pico-card-background-color, #fff);
+  /*padding-top: .4rem;*/
+  border: 2px solid transparent;
+  /* прозорий бордер */
+  border-image: linear-gradient(90deg, #2bdd2255 0%, #a89a3e4b 100%) 1;
+
+}
+
+.sticky-bar a {
+  font-size: 1.2rem;
+}
+
+.sticky-bar nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sticky-bar .nav-left,
+.sticky-bar .nav-right {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.sticky-bar .nav-left li a,
+.sticky-bar .nav-right li a {
+  border: 1px solid;
+  border-radius: 16px;
+}
+
+.sticky-bar a[data-nav] {
+  padding: .4rem .7rem;
+  border-radius: 10px;
+}
+
+.sticky-bar a[data-nav].is-active {
+  background: rgba(0, 0, 0, .08);
+  font-weight: 600;
+}
+
+html[data-theme="dark"] .sticky-bar a[data-nav].is-active { background: rgba(255,255,255,.12); }
+
+.lang-switch { position: relative; }
+.lang-btn { min-width: 84px; } /* щоб напис не стрибав */
+.lang-menu {
+  position: absolute; right: 0; top: calc(100% + 6px);
+  list-style: none; margin: 0; padding: .25rem 0;
+  background: var(--pico-card-background-color,#fff);
+  border: 1px solid var(--pico-muted-border-color,#ddd);
+  border-radius: 10px; min-width: 160px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  display: none; z-index: 1000;
+}
+.lang-menu.show { display: block; }
+.lang-menu a { display:block; padding:.45rem .75rem; text-decoration:none; cursor:pointer; }
+.lang-menu a:hover, .lang-menu a:focus { background: rgba(0,0,0,.06); }
+.lang-menu a.is-active { font-weight: 600; }
+
+/* Hero */
+.hello {
+  font-size: clamp(2rem, 2.2vw + 1rem, 3rem);
+  margin: 1rem 0;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  /* працює і з border-image */
+}
+
+.hero-inner {
+  text-align: center;
+  max-width: 780px;
+  margin-inline: auto;
+  padding-top: 0;
+}
+.myinfo {
+  text-align: justify;
+  
+
+}
+
+.avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid black;
+  margin-bottom: .8rem;
+}
+
+.tagline {
+  margin: .2rem auto 1rem;
+  max-width: 60ch;
+}
+
+.cta {
+  display: flex;
+  gap: .6rem;
+  justify-content: center;
+}
+
+
+/* Bottom-half background image under hero */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100vw;
+  height: 45vh;
+  background-size: cover;
+  background-position: center bottom;
+  opacity: .28;
+  pointer-events: none;
+}
+
+/* Panels / sections */
+.panel {
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--pico-card-background-color, #fff);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, .04);
+  scroll-margin-top: 96px;
+  border: 7px solid transparent;
+  /* прозорий бордер */
+  border-image: linear-gradient(90deg, #4822dd 0%, #a83e8b 100%) 1;
+  border-radius: 16px;
+}
+
+.fullvh {
+  min-height: 100vh;
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+/* Projects/Contact fine-tuning */
+#projects ul {
+  padding-left: 1.2rem;
+}
+
+
+
+.contact-buttons {
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  justify-content: left;
+  text-decoration: none;
+}
+
+.contact-meta {
+  color: #666;
+  margin-top: 1rem;
+}
+
+html[data-theme="dark"] .contact-meta { color: rgba(255,255,255,.75); }
+
+
+.fish {
+  width: 240px;
+  height: 350px;
+  object-fit: cover;
+  border: 3px solid rgba(14, 52, 190, 0.1);
+  margin-bottom: .8rem;
+}
+
+/* Сховати honeypot доступно для скрінрідерів */
+.hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px; height: 1px; overflow: hidden;
+}
+
+#flash-zone{
+  position: fixed;      /* плаваючий “тост” */
+  top: 5rem;
+  right: 1.8rem;
+  z-index: 1000;
+  max-width: 360px;
+
+
+}
+
+.flash-msg{
+  margin: 0 0 0.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: .5rem;
+  animation: slideIn .25s ease-out;
+  border: 3px solid rgb(182, 11, 11);
+}
+.flash-msg .close{
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: .7;
+}
+.flash-msg.hide{
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+@keyframes slideIn{
+  from{ transform: translateY(-8px); opacity: 0; }
+  to  { transform: translateY(0);    opacity: 1; }
+}
+
+
+
+
+/* Optional: section snap feeling (page-by-page scroll) */
+@media (min-width: 640px) {
+  html.snap body {
+    scroll-snap-type: y mandatory;
+  }
+
+  html.snap section.panel {
+    scroll-snap-align: start;
+  }
+}
+
+@media (min-width: 769px) {
+  .cta {
+    flex-wrap: wrap;
+  }
+
+  .sticky-bar {
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  .sticky-bar a {
+    font-size: 1.2rem;
+  }
+
+}
+
+/* Mobile tweaks */
+@media (min-width: 593px) and (max-width: 768px) {
+  .cta {
+    flex-wrap: wrap;
+  }
+
+  .sticky-bar {
+    padding-top: 1rem;
+    padding-left: 1rem;
+  }
+
+  .sticky-bar a {
+    font-size: 1.2rem;
+  }
+}
+
+
+/* при ≤ 1000px: фон прибираємо */
+@media (max-width: 1000px) {
+  body {
+    background-image: none !important;
+    /* сховати зображення та градієнт */
+    background-color: #ffffff;
+    /* або темний, якщо у темній темі */
+    background-attachment: scroll;
+    /* на всяк випадок */
+  }
+
+  [data-theme="dark"] body {
+    background-color: #0f1115;
+  }
+}
+
+@media (max-width: 593px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .cta {
+    flex-wrap: wrap;
+  }
+  .sticky-bar {
+    margin-inline: auto;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
