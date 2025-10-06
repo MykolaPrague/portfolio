@@ -42,7 +42,7 @@
     localStorage.setItem("theme", next);
   };
 
-  document.querySelectorAll("#themeToggle").forEach(btn =>
+  document.querySelectorAll(".themeToggle").forEach(btn =>
     btn.addEventListener("click", toggleTheme)
   );
 })();
