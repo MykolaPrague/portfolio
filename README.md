@@ -1,65 +1,72 @@
-# Portfolio
 
-🧑‍💻 Mykola Shyshka – Portfolio
+# 🧑‍💻 Mykola Shyshka – Portfolio
 
-A lightweight, responsive personal portfolio website built with
-HTML + CSS (PicoCSS) + Vanilla JavaScript — no backend required.
+A clean, responsive personal portfolio website built with
+**HTML + CSS (PicoCSS) + Vanilla JavaScript** — no backend required.
 
-🌍 Live demo
+---
 
-👉 https://mykolaprague.github.io/portfolio/
+### 🌍 Live Demo
 
-(or update this link once you publish your repository to GitHub Pages)
+👉 [mykolaprague.github.io/portfolio](https://mykolaprague.github.io/portfolio/)
 
-✨ Features
+*(The site showcases my frontend and UI work. The contact form is disabled for demo purposes.)*
 
-💡 Light/Dark theme toggle (stored in localStorage)
+---
 
-🌐 Smooth scroll and active section highlight
+### ✨ Features
 
-📬 Contact section with clean layout
+- 💡 **Light/Dark theme** toggle (saved in localStorage)
+- 🌐 **Smooth scroll** and section highlight on navigation
+- 📱 **Fully responsive** layout for desktop & mobile
+- 🧩 **Minimalistic design** powered by [PicoCSS](https://picocss.com)
+- 🎨 **Custom fonts:** Michroma, Honk, Kalnia Glaze
 
-🧩 Responsive design for desktop and mobile
+---
 
-🖼️ Minimalistic style using PicoCSS
+### 🗂️ Folder Structure
 
-🎨 Google Fonts: Michroma, Honk, Kalnia Glaze
-
-📁 Folder structure
 portfolio/
 │
 ├── index.html
 ├── static/
-│   ├── style.css
-│   ├── myScript.js
-│   ├── avatar2.png
-│   ├── fishman.png
-│   ├── background.png
-│   └── favicon.ico
+│ ├── style.css
+│ ├── myScript.js
+│ ├── avatar2.png
+│ ├── fishman.png
+│ ├── background.png
+│ └── favicon.ico
 └── README.md
 
-🚀 Deployment
+yaml
+Копіювати код
 
-To host it on GitHub Pages:
+---
 
-Create a new repository (e.g., portfolio).
+### 🚀 Deployment
 
-Upload all files (including static/).
+The project is deployed on **GitHub Pages**.To deploy your own copy:
 
-Go to
-Settings → Pages → Build and deployment → Source → Deploy from branch.
+1. Create a new repository (e.g. `portfolio`)
+2. Upload the files (including the `static/` folder)
+3. Go to`Settings → Pages → Build and deployment → Source → Deploy from branch`
+4. Select **main** branch and **/(root)** folder
+5. After a few minutes, your site will be live at:
+   `https://yourusername.github.io/portfolio/`
 
-Select main branch and folder / (root).
+---
 
-After a few minutes, your site will be live at
-https://yourusername.github.io/portfolio/.
+### 📫 Contacts
 
-📫 Contact
+- 💬 **Telegram:** available upon request
+- 🧑‍💻 **GitHub:** [MykolaPrague](https://github.com/MykolaPrague)
+- 🧰 **Upwork:** [upwork.com/freelancers/~01d4779350a70aa648](https://www.upwork.com/freelancers/~01d4779350a70aa648)
+- ✉️ **Email:** *available upon request*
 
-Telegram:
+---
 
-GitHub: MykolaPrague
-
-Upwork: https://www.upwork.com/freelancers/~01d4779350a70aa648
-
-Email: **************@gmail.com
+>
+>> ⚡ *This portfolio is a frontend demo showcasing my development and design skills for potential freelance and Upwork clients.*
+>>
+>>
+>
