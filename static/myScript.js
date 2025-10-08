@@ -79,3 +79,17 @@
   el.scrollIntoView({ behavior: "auto", block: "start" });
   setTimeout(() => document.documentElement.classList.remove("no-smooth"), 50);
 })();
+
+
+// --- Hide contact form if from Upwork ---
+// Optional: hide the form if the visitor came from Upwork (keeps comms on-platform)
+(function () {
+  try {
+    const ref = document.referrer || "";
+    if (/upwork\.com/i.test(new URL(ref).host)) {
+      const form = document.getElementById("contactForm");
+      if (form) form.style.display = "none";
+    }
+  } catch (e) {}
+})();
+

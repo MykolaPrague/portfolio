@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio – Mykola Shyshka</title>
 
+    <!-- Minimal CSS stack -->
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
     <link rel="stylesheet" href="static/style.css" />
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet"/>
 
-    <!-- ВАЖЛИВО: відносні шляхи -->
+    <!-- Relative asset paths for GitHub Pages -->
     <link rel="icon" href="static/favicon.ico"/>
     <link rel="apple-touch-icon" href="static/icon-180.png"/>
     <link rel="manifest" href="static/site.webmanifest"/>
@@ -30,6 +32,7 @@
           </ul>
           <ul class="nav-right">
             <li>
+              <!-- Theme toggle is handled in static/myScript.js -->
               <button class="themeToggle contrast outline" type="button" aria-label="Toggle theme">🌙/☀️</button>
             </li>
           </ul>
@@ -60,7 +63,7 @@
     </header>
 
     <main id="main" class="container">
-      <!-- HERO / PRESENT -->
+      <!-- HERO -->
       <section id="present" class="panel hero fullvh" aria-labelledby="present-title">
         <div class="hero-inner">
           <h1 id="present-title" class="hello">Mykola Shyshka</h1>
@@ -105,7 +108,7 @@
 
         <ul>
           <li>
-            <a href="https://lamik.pythonanywhere.com" target="_blank" rel="noopener">
+            <a href="https://lamik.pythonanywhere.com" target="_blank" rel="noopener noreferrer">
               <img class="fish" src="static/fishman.png" alt="Fishlog preview"/>
             </a>
           </li>
@@ -131,17 +134,20 @@
 
         <div class="contact-buttons">
           <ul>
-            <li><a class="contrast outline" href="https://t.me/yourhandle" target="_blank" rel="noopener">💬 Telegram</a></li>
-            <li><a class="contrast outline" href="https://github.com/yourhandle" target="_blank" rel="noopener">🧑‍💻 GitHub</a></li>
-            <li><a class="contrast outline" href="https://www.upwork.com/freelancers/~01d4779350a70aa648" target="_blank" rel="noopener">🧰 Upwork</a></li>
+            <li><a class="contrast outline" href="https://t.me/yourhandle" target="_blank" rel="noopener noreferrer">💬 Telegram</a></li>
+            <li><a class="contrast outline" href="https://github.com/yourhandle" target="_blank" rel="noopener noreferrer">🧑‍💻 GitHub</a></li>
+            <li><a class="contrast outline" href="https://www.upwork.com/freelancers/~01d4779350a70aa648" target="_blank" rel="noopener noreferrer">🧰 Upwork</a></li>
           </ul>
         </div>
 
-        <!-- Форма без бекенду: заміни action на Formspree/EmailJS або залиш mailto -->
-        <!-- ВАРІАНТ 1: Formspree -->
-        <!-- <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> -->
-        <!-- ВАРІАНТ 2: простий mailto (відкриє поштовий клієнт користувача): -->
-        <form action="https://formspree.io/f/xyznpnal" method="POST">
+        <!-- Upwork-safe note: invite Upwork users to message you on-platform -->
+        <p style="margin-top:.5rem; font-size: .95rem; opacity:.8;">
+          If you found me via Upwork, please message me there regarding Upwork jobs.
+        </p>
+
+        <!-- Backend-less form (Formspree). -->
+        <!-- Keep fields generic (no off-platform solicitation). -->
+        <form action="https://formspree.io/f/xyznpnal" method="POST" id="contactForm" novalidate>
           <label>
             Name
             <input type="text" name="name" required />
@@ -157,25 +163,26 @@
             <textarea name="message" rows="5" required></textarea>
           </label>
 
-          <!-- Honeypot field (антибот) -->
+          <!-- Honeypot (anti-bot) -->
           <label class="hp" aria-hidden="true" tabindex="-1">
             Your website (leave empty)
             <input type="text" name="_gotcha" autocomplete="off" />
           </label>
 
-          <!-- Optional: email subject -->
-          <input type="hidden" name="_subject" value="New message from portfolio site">
+          <!-- Optional: custom subject -->
+          <input type="hidden" name="_subject" value="New message from portfolio site" />
 
-          <!-- Optional: success redirect -->
-          <input type="hidden" name="_redirect" value="https://mykolaprague.github.io/#contact">
+          <!-- Optional: success redirect (must match allowed domain in Formspree settings) -->
+          <input type="hidden" name="_redirect" value="https://mykolaprague.github.io/#contact" />
 
           <button type="submit" class="contrast">Send</button>
         </form>
 
-
         <p class="contact-meta">📍 Prague, Czechia · ⏱️ Mon–Fri, 09:00–17:00 CET</p>
       </section>
     </main>
+
+    <!-- JS: interactions (theme toggle, active link, etc.) -->
     <script src="static/myScript.js"></script>
   </body>
 </html>

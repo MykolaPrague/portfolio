@@ -1,4 +1,5 @@
 # Portfolio
+
 🧑‍💻 Mykola Shyshka – Portfolio
 
 A lightweight, responsive personal portfolio website built with
@@ -55,10 +56,10 @@ https://yourusername.github.io/portfolio/.
 
 📫 Contact
 
-Telegram: 
+Telegram:
 
 GitHub: MykolaPrague
 
 Upwork: https://www.upwork.com/freelancers/~01d4779350a70aa648
 
-Email: koljaxp@gmail.com
+Email: **************@gmail.com
